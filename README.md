@@ -65,12 +65,12 @@ Viene utilizzato un unico fd di tipo FILE* che legge e memorizza dal buffer, il 
       • Ritorna 0 se gli argomenti hanno contenuto identico
       • Ritorna 1, se gli argomenti differiscono, elencando a video quali elementi differiscono
 
-Più in dettaglio:<br>
+Più in dettaglio:<br>
 • L’utility prende in input il nome di due files o cartelle da confrontare, distingue se sono due file, e in questo caso li confronta, due cartelle, e anche in questo caso le confronta, o se sono un file e una cartella, il che comporta che siano ovviamente diversi. <br>
 • Sia il primo controllo, sia la verifica dell’uguaglianza sono state implementati in file diversi e vengono chiamati come funzioni all’occorrenza.<br>
 • Il controllo della tipologia di file viene fatto mediante la funzione S_ISDIR.<br>
 • La verifica dell’uguaglianza di due file in primo luogo filtra i file che hanno uguale dimensione (se hanno dimensione diversa non potranno essere uguali) e, qualora il primo controllo sia positivo, procede con una verifica bit a bit dei file.<br>
-• Il controllo dell’uguaglianza tra due cartelle controlla in primis se i nomi dei file contenuti nelle due cartelle sono uguali (se ci sono file con nomi differenti li inserisce direttamente tra i file diversi). Se ci sono file con nomi uguali allora l’utility procede con la verifica utilizzando la funzione di controllo tra due file già vista in precedenza. Qualora all’interno della cartella ci siano ulteriori cartelle la funzione viene chiamata ricorsivamente.
+• Il controllo dell’uguaglianza tra due cartelle controlla in primis se i nomi dei file contenuti nelle due cartelle sono uguali (se ci sono file con nomi differenti li inserisce direttamente tra i file diversi). Se ci sono file con nomi uguali allora l’utility procede con la verifica utilizzando la funzione di controllo tra due file già vista in precedenza. Qualora all’interno della cartella ci siano ulteriori cartelle la funzione viene chiamata ricorsivamente.
 Ogni utility registra le operazioni effettuate in un file di log all’interno della cartella “/var/log/utility/<nome-Utility>”.<br>
 • Durante l’implementazione dell’utility abbiamo deciso di suddividere il tutto in diversi file: “main.c”, “doubleFile.c”, “doubleFolder.c”, “control.c”, “log.c”, “lib.h”.<br>
 
@@ -84,7 +84,5 @@ Le combinazioni di flag possibili sono:
        
        
 ## CONCLUSIONI
-Il progetto descritto è stato sviluppato per un esame nell' anno 2012/1013. Entrambe le utility funzionano correttamente anche se sono presenti alcuni errori nella stesura del codice. Qualsiasi request per un miglioramento del codice è ben accetta. Grazie
-
-
+Il progetto descritto è stato sviluppato per un esame nell' anno 2012/1013. Entrambe le utility funzionano correttamente anche se sono presenti alcuni errori nella stesura del codice. Qualsiasi request per un miglioramento del codice è ben accetta. 
 
